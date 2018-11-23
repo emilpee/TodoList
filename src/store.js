@@ -5,12 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    tasks: [
+      {
+        task: "This is a task",
+        check: false
+      },
+    ]
   },
   mutations: {
-
   },
-  actions: {
-
-  }
 })
