@@ -15,10 +15,13 @@ export default new Vuex.Store({
   },
   mutations: {
     add: function(state) {
+      // Add a task if the input is not empty
+    if (state.input.task && state.input.check !== '') { 
       state.tasks.push({
         task: state.input.task,
         check: false
       });
+    }
       state.input.task = ''; // Reset the input field
     },
     remove(state, task) {

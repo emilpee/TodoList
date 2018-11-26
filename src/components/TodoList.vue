@@ -4,14 +4,14 @@
     <h1>To Do List</h1>
     <ul>
       <li v-for="task in tasks" :key="task.id"> 
-        <input type="checkbox">
-        <span> {{ task.task }} </span>
-        <button @click="remove(task)">x</button>
+        <input type="checkbox" v-model="task.check" class="check">
+        <span :class="{check: task.check}"> {{ task.task }} </span>
+        <button class="removeBtn" @click="remove(task)">x</button>
       </li>
     </ul>
   </div>
-  <input type="text" v-model="input.task" placeholder="I need to...">
-  <button type="button" @click="add">Add task</button>
+  <input type="text" id="addtask" v-model="input.task" placeholder="I need to...">
+  <button type="button" @click.prevent="add">Add task</button>
 </div>
 </template>
 
@@ -48,7 +48,7 @@ ul {
 }
 li {
   display: block;
-  margin: 0 10px;
+  margin: 10px 15px;
 }
 a {
   color: #42b983;
@@ -60,5 +60,27 @@ a {
   width: 70%;
   margin: 0 auto;
   margin-bottom: 10px;
+  position: relative;
+}
+.check {
+  text-decoration: line-through;
+  font-style: italic;
+  color: gray;
+}
+.removeBtn {
+  position: absolute;
+  left: 600px;
+  border: 0;
+}
+#addtask {
+  background-color: #fff6a2;
+  color: gray;
+  border: 2px goldenrod groove;
+  padding: 5px;
+}
+button {
+  margin-left: 5px;
+  border: 2px solid black;
+  padding: 5px;
 }
 </style>
