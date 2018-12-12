@@ -1,5 +1,7 @@
 # todo
 
+A traditional to-do list built with Vue and Vuex.
+
 ## Project setup
 ```
 npm install
