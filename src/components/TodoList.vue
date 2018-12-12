@@ -10,8 +10,8 @@
       </li>
     </ul>
   </div>
-  <input type="text" id="addtask" v-model="input.task" placeholder="I need to...">
-  <button type="button" @click.prevent="add">Add task</button>
+  <input type="text" id="addtask" minlength="1" v-model.trim="input.task" placeholder="I need to...">
+  <button type="button" @click="add">Add task</button>
 </div>
 </template>
 
@@ -69,7 +69,7 @@ a {
 }
 .removeBtn {
   position: absolute;
-  left: 600px;
+  right: 25%;
   border: 0;
 }
 #addtask {
@@ -83,4 +83,5 @@ button {
   border: 2px solid black;
   padding: 5px;
 }
+
 </style>
